@@ -83,21 +83,72 @@ function tinhtongtien(Kw){
 //B3
 
 function B3() {
+    //Dau vao
     var ten = document.getElementById("b3").value;
     var sothunhap = document.getElementById("b3_1").value*1;
     var songuoi = document.getElementById("b3_2").value*1;
     var thunhapchiuthue = sothunhap - 4000000 - (songuoi*1600000);
     var tongtien = 0;
-    if (thunhapchiuthue <=60){
+    const numberFormat = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+    });
+    // if (thunhapchiuthue <=60e+6){
+    //     tongtien = thunhapchiuthue * 0.05;
+    // } else if( thunhapchiuthue > 60e+6 && thunhapchiuthue <= 120e+6){
+    //     tongtien = 60e+6 * 0.05 + (thunhapchiuthue - 60e+6) * 0.1;
+    // } else if (thunhapchiuthue > 120e+6 && thunhapchiuthue <= 210e+6){
+    //     tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + (thunhapchiuthue - 120e+6)*0.15;
+    // } else if (thunhapchiuthue > 210e+6 && thunhapchiuthue <= 384e+6){
+    //     tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + (thunhapchiuthue - 210e+6)*0.2;
+    // } else if (thunhapchiuthue > 384e+6 && thunhapchiuthue <= 624e+6){
+    //     tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6*0.2 + (thunhapchiuthue - 384e+6)*0.25;
+    // } else if (thunhapchiuthue > 624e+6 && thunhapchiuthue <= 960e+6){
+    //     tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6*0.2 + 240e+6*0.25+ (thunhapchiuthue - 624e+6)*0.3;
+    // } else {
+    //     tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6*0.2 + 240e+6*0.25+ 336*0.3+(thunhapchiuthue - 960e+6)*0.35;
+    // }
+    document.getElementById("infoB3").innerHTML = "Tên: "+ten+"; Số tiền thuế: "+numberFormat.format(tinhtienthue(thunhapchiuthue));//đầu ra
+}
+//Xử lí
+function tinhtienthue(thunhapchiuthue){
+    if (thunhapchiuthue <=60e+6){
         tongtien = thunhapchiuthue * 0.05;
-    } else if( thunhapchiuthue > 60 && thunhapchiuthue <= 120){
-        tongtien = 60 * 0.05 + (thunhapchiuthue - 60) * 0.1;
-    } else if (thunhapchiuthue > 120 && thunhapchiuthue <= 210){
-        tongtien = 60 * 0.05 + 60 * 0.1 + (thunhapchiuthue - 120)*0.15;
-    } else if (thunhapchiuthue > 210 && thunhapchiuthue <= 384){
-        tongtien = 60 * 0.05 + 60 * 0.1 + 90 * 015 + (thunhapchiuthue - 210)*0.2;
-    } else if (thunhapchiuthue > 384 && thunhapchiuthue <= 624){
-        tongtien = 60 * 0.05 + 60 * 0.1 + 90 * 015 + 174*0.2 + (thunhapchiuthue - 384)*0.25;
-    } else if (thunhapchiuthue > 624 && thunhapchiuthue <= 960){
-        tongtien = 60 * 0.05 + 60 * 0.1 + 90 * 015 + 174*0.2 + 240*0.25+ (thunhapchiuthue - 384)*0.3;
-    } 
+    } else if( thunhapchiuthue > 60e+6 && thunhapchiuthue <= 120e+6){
+        tongtien = 60e+6 * 0.05 + (thunhapchiuthue - 60e+6) * 0.1;
+    } else if (thunhapchiuthue > 120e+6 && thunhapchiuthue <= 210e+6){
+        tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + (thunhapchiuthue - 120e+6)*0.15;
+    } else if (thunhapchiuthue > 210e+6 && thunhapchiuthue <= 384e+6){
+        tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + (thunhapchiuthue - 210e+6)*0.2;
+    } else if (thunhapchiuthue > 384e+6 && thunhapchiuthue <= 624e+6){
+        tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6*0.2 + (thunhapchiuthue - 384e+6)*0.25;
+    } else if (thunhapchiuthue > 624e+6 && thunhapchiuthue <= 960e+6){
+        tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6*0.2 + 240e+6*0.25+ (thunhapchiuthue - 624e+6)*0.3;
+    } else {
+        tongtien = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6*0.2 + 240e+6*0.25+ 336*0.3+(thunhapchiuthue - 960e+6)*0.35;
+    }
+    return tongtien;
+}
+
+//B4
+//Đầu vào
+function B4(){
+    var nhadan = document.getElementById("");
+}
+
+function myFunction(){
+    var x = document.getElementById("X").value;
+    y="";
+    y+= '<select class="form-control ml-2" id="sel3" style="appearance: none;">';
+    y+= "<option>Chọn khu vực</option>";
+    y+= "<option>A</option>";
+    y+= "<option>B</option>";
+    y+= "</select>";
+
+    if(x == "Doanh Nghiệp"){
+        document.getElementById("infoB4").innerHTML = y;
+    } else{
+        document.getElementById("infoB4").innerHTML = "";
+    }
+     
+}

@@ -67,7 +67,7 @@
         <div class="row">
           <div class="col-md-6 mx-auto">
             <div class="card">
-              <div class="card-header">B2 tính tiền điện</div>
+              <div class="card-header">B3 tính tiền thuế</div>
               <div class="card-body">
                 <div class="form-group d-flex">
                     <input id="b3" type="text" class="form-control mr-2" placeholder="Tên" />
@@ -75,9 +75,35 @@
                     <input id="b3_2" type="text" class="form-control ml-2" placeholder="Số người phụ thuộc"/>
                 </div>
                 <br>
-                <button id="btnB3" class="btn btn-success">Submit</button>
+                <button id="btnB3" class="btn btn-success" onclick="B3()">Submit</button>
               </div>
               <div id="infoB3" class="card-footer text-muted"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card">
+              <div class="card-header">B4 tính tiền thuế</div>
+              <div class="card-body">
+                <div class="form-group d-flex">
+                    <select class="form-control ml-2" style="appearance: none;" id="X" onchange="myFunction()">
+                      <option>Chọn đối tượng</option>
+                      <option>Nhà dân</option>
+                      <option >Doanh Nghiệp</option>
+                      <!-- <option>3</option> -->
+                    </select>
+                    <input id="b4_1" type="text" class="form-control ml-2" placeholder="Tổng thu nhập"/>
+                    <input id="b4_2" type="text" class="form-control ml-2" placeholder="Số người phụ thuộc"/>
+                </div>
+                <div id="infoB4" class="text-muted"></div>
+                <br>
+                <button id="btnB4" class="btn btn-success" onclick="B4()">Submit</button>
+              </div>
+              <div id="infoB4_1" class="card-footer text-muted"></div>
             </div>
           </div>
         </div>
