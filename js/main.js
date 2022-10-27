@@ -139,11 +139,7 @@ function B4(){
 function myFunction(){
     var x = document.getElementById("X").value;
     y="";
-    y+= '<select class="form-control ml-2" id="sel3" style="appearance: none;">';
-    y+= "<option>Chọn khu vực</option>";
-    y+= "<option>A</option>";
-    y+= "<option>B</option>";
-    y+= "</select>";
+    y+= '<input id="b4_1" type="number" class="form-control ml-2" placeholder="Số Kết nối"/>';
 
     if(x == "Doanh Nghiệp"){
         document.getElementById("infoB4").innerHTML = y;
